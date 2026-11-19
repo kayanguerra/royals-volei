@@ -8,62 +8,58 @@
   },
   "players": [
     {
+      "name": "Guiih Glass",
+      "number": 1,
+      "position": "Levantador",
+      "height": "1,85 m"
+    },
+    {
       "name": "Bia Martins",
       "number": 4,
       "position": "Ponteiro",
-      "height": "1,70 m",
-      "photo": "/assets/gallery/Bia.jpeg"
-    },
-    {
-      "name": "Kayan Guerra",
-      "number": 7,
-      "position": "Oposto",
-      "height": "1,90 m",
-      "photo": "/assets/gallery/kayan1.jpg"
-    },
-    {
-      "name": "Lippe",
-      "number": 8,
-      "position": "Oposto",
-      "height": "1,85 m",
-      "photo": "/assets/gallery/Felipe.jpeg"
+      "height": "1,70 m"
     },
     {
       "name": "Maiky",
       "number": 3,
       "position": "Ponteiro",
-      "height": "1,70 m",
-      "photo": "/assets/gallery/Maiky.jpeg"
+      "height": "1,70 m"
+    },
+    {
+      "name": "Kayan Guerra",
+      "number": 7,
+      "position": "Oposto",
+      "height": "1,90 m"
+    },
+    {
+      "name": "Átila",
+      "number": 8,
+      "position": "Levantador",
+      "height": "1,65 m"
+    },
+    {
+      "name": "Giovanna",
+      "number": 9,
+      "position": "Central",
+      "height": "1,72 m"
     },
     {
       "name": "Amanda",
-      "number": 6,
+      "number": 12,
       "position": "Líbero",
       "height": "1,65 m"
     },
     {
-      "name": "Nome da Atleta",
-      "number": 9,
-      "position": "Levantador",
-      "height": "1,72 m"
-    },
-    {
-      "name": "Nome da Atleta",
-      "number": 10,
-      "position": "Ponteiro",
-      "height": "1,75 m"
-    },
-    {
-      "name": "Nome da Atleta",
-      "number": 12,
-      "position": "Central",
-      "height": "1,85 m"
-    },
-    {
-      "name": "Nome da Atleta",
-      "number": 15,
+      "name": "Mantoan",
+      "number": 21,
       "position": "Central",
       "height": "1,83 m"
+    },
+    {
+      "name": "Lippe",
+      "number": 23,
+      "position": "Oposto",
+      "height": "1,85 m"
     }
   ],
   "mvpHighlights": [
