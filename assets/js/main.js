@@ -171,6 +171,20 @@ function setTheme(themeKey) {
 })();
 
 // ============================================================
+//  RODAPÉ — ano automático e "voltar ao topo"
+// ============================================================
+
+(function initFooter() {
+    const year = document.getElementById('footerYear');
+    if (year) year.textContent = new Date().getFullYear();
+    const top = document.getElementById('footerTop');
+    if (top) top.addEventListener('click', e => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+})();
+
+// ============================================================
 //  NAVBAR
 // ============================================================
 
