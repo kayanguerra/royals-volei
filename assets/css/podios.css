@@ -40,7 +40,8 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.25), transparent 40%, rgba(0,0,0,0.35));
+    /* termina transparente: sem corte reto na emenda com o quadro de medalhas */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.25), transparent 45%);
     z-index: -1;
 }
 .page-hero-title {
