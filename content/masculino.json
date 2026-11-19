@@ -7,59 +7,40 @@
   },
   "players": [
     {
-      "number": 1,
-      "name": "Nome do Atleta",
-      "position": "Levantador",
-      "height": "",
-      "photo": ""
-    },
-    {
-      "number": 2,
-      "name": "Nome do Atleta",
-      "position": "Ponteiro",
-      "height": "",
-      "photo": ""
-    },
-    {
-      "number": 5,
-      "name": "Nome do Atleta",
-      "position": "Ponteiro",
-      "height": "",
-      "photo": ""
-    },
-    {
-      "number": 11,
-      "name": "Nome do Atleta",
+      "name": "Kayan",
+      "number": 7,
       "position": "Oposto",
-      "height": "",
-      "photo": ""
+      "height": "1,90 m"
     },
     {
+      "name": "Nome do Atleta",
+      "number": 2,
+      "position": "Ponteiro"
+    },
+    {
+      "name": "Nome do Atleta",
+      "number": 5,
+      "position": "Ponteiro"
+    },
+    {
+      "name": "Nome do Atleta",
+      "number": 11,
+      "position": "Oposto"
+    },
+    {
+      "name": "Nome do Atleta",
       "number": 13,
-      "name": "Nome do Atleta",
-      "position": "Central",
-      "height": "",
-      "photo": ""
+      "position": "Central"
     },
     {
+      "name": "Nome do Atleta",
       "number": 14,
-      "name": "Nome do Atleta",
-      "position": "Central",
-      "height": "",
-      "photo": ""
+      "position": "Central"
     },
     {
-      "number": 17,
       "name": "Nome do Atleta",
-      "position": "Líbero",
-      "height": "",
-      "photo": ""
+      "number": 17,
+      "position": "Líbero"
     }
-  ],
-  "mvpHighlights": [],
-  "games": {
-    "proximos": [],
-    "resultados": []
-  },
-  "galleryImages": []
+  ]
 }
