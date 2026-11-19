@@ -366,7 +366,8 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
 /* ===== HERO ===== */
 .hero {
     min-height: 100vh;
-    background: linear-gradient(145deg, rgba(var(--dark-rgb),0.62), rgba(var(--primary-rgb),0.46));
+    /* O tom escuro do topo fica no ::before, que esfuma embaixo (sem corte reto). */
+    background: none;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -386,14 +387,21 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
     opacity: 0.22;
     z-index: -2;
     pointer-events: none;
+    /* Esfuma a parte de baixo para não ficar um corte reto na emenda com a próxima seção */
+    -webkit-mask-image: linear-gradient(to bottom, #000 75%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 75%, transparent 100%);
 }
 
 .hero::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 50% 48%, rgba(0,0,0,0.34) 0%, rgba(0,0,0,0.1) 34%, rgba(0,0,0,0.35) 100%);
+    background:
+        radial-gradient(circle at 50% 48%, rgba(0,0,0,0.34) 0%, rgba(0,0,0,0.1) 34%, rgba(0,0,0,0.35) 100%),
+        linear-gradient(145deg, rgba(var(--dark-rgb),0.62), rgba(var(--primary-rgb),0.46));
     z-index: -1;
+    -webkit-mask-image: linear-gradient(to bottom, #000 65%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 65%, transparent 100%);
 }
 
 .hero-bg-pattern {
@@ -1588,6 +1596,10 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
     mix-blend-mode: screen;
 }
 .hero-trails svg { width: 100%; height: 100%; display: block; }
+.hero-trails {
+    -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+}
 
 /* ===== CENA DE SAQUE (seção Jogos — rede + trajetória da bola) ===== */
 .serve-scene {
