@@ -1,0 +1,65 @@
+{
+  "time": "Royals Masculino",
+  "temporadas": 0,
+  "estatisticasManuais": {
+    "jogos": 0,
+    "vitorias": 0
+  },
+  "players": [
+    {
+      "number": 1,
+      "name": "Nome do Atleta",
+      "position": "Levantador",
+      "height": "",
+      "photo": ""
+    },
+    {
+      "number": 2,
+      "name": "Nome do Atleta",
+      "position": "Ponteiro",
+      "height": "",
+      "photo": ""
+    },
+    {
+      "number": 5,
+      "name": "Nome do Atleta",
+      "position": "Ponteiro",
+      "height": "",
+      "photo": ""
+    },
+    {
+      "number": 11,
+      "name": "Nome do Atleta",
+      "position": "Oposto",
+      "height": "",
+      "photo": ""
+    },
+    {
+      "number": 13,
+      "name": "Nome do Atleta",
+      "position": "Central",
+      "height": "",
+      "photo": ""
+    },
+    {
+      "number": 14,
+      "name": "Nome do Atleta",
+      "position": "Central",
+      "height": "",
+      "photo": ""
+    },
+    {
+      "number": 17,
+      "name": "Nome do Atleta",
+      "position": "Líbero",
+      "height": "",
+      "photo": ""
+    }
+  ],
+  "mvpHighlights": [],
+  "games": {
+    "proximos": [],
+    "resultados": []
+  },
+  "galleryImages": []
+}

@@ -1,0 +1,278 @@
+# Configuração do painel Pages CMS (https://app.pagescms.org)
+# As fotos enviadas pelo painel vão para assets/gallery/
+media:
+  input: assets/gallery
+  output: /assets/gallery
+
+content:
+  - name: misto
+    label: Royals Misto (roxo)
+    type: file
+    path: content/misto.json
+    fields:
+      - name: time
+        label: Nome do time
+        type: string
+        readonly: true
+      - name: temporadas
+        label: Temporadas
+        type: number
+      - name: estatisticasManuais
+        label: Números da seção "Sobre" (deixe 0 para calcular pelos resultados)
+        type: object
+        fields:
+          - name: jogos
+            label: Jogos
+            type: number
+          - name: vitorias
+            label: Vitórias
+            type: number
+      - name: players
+        label: Elenco
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Nome
+            type: string
+            required: true
+          - name: number
+            label: Número da camisa
+            type: number
+          - name: position
+            label: Posição
+            type: select
+            options:
+              values: [Levantador, Ponteiro, Oposto, Central, Líbero]
+          - name: height
+            label: Altura (ex. 1,85 m)
+            type: string
+          - name: photo
+            label: Foto
+            type: image
+      - name: mvpHighlights
+        label: MVPs
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Nome
+            type: string
+          - name: number
+            label: Número
+            type: number
+          - name: position
+            label: Posição
+            type: select
+            options:
+              values: [Levantador, Ponteiro, Oposto, Central, Líbero]
+          - name: photo
+            label: Foto
+            type: image
+          - name: match
+            label: Jogo (ex. Royals x Volley Stars)
+            type: string
+          - name: stats
+            label: Números (ex. 32 pontos • 5 aces)
+            type: string
+          - name: quote
+            label: Título / frase (ex. MVP - Torneio Misto 2026.)
+            type: string
+      - name: games
+        label: Jogos
+        type: object
+        fields:
+          - name: proximos
+            label: Próximos jogos (o primeiro aparece no destaque do topo)
+            type: object
+            list: true
+            fields:
+              - name: day
+                label: Dia (ex. 16)
+                type: string
+              - name: month
+                label: Mês (ex. Ago)
+                type: select
+                options:
+                  values: [Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
+              - name: opponent
+                label: Jogo / adversário
+                type: string
+              - name: location
+                label: Local
+                type: string
+              - name: time
+                label: Horário (ex. 19h00)
+                type: string
+              - name: type
+                label: Mando (home = em casa, away = fora)
+                type: select
+                options:
+                  values: [home, away]
+          - name: resultados
+            label: Resultados
+            type: object
+            list: true
+            fields:
+              - name: day
+                label: Dia
+                type: string
+              - name: month
+                label: Mês
+                type: select
+                options:
+                  values: [Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
+              - name: opponent
+                label: Jogo / adversário
+                type: string
+              - name: location
+                label: Local
+                type: string
+              - name: type
+                label: Resultado (win = vitória, loss = derrota)
+                type: select
+                options:
+                  values: [win, loss]
+              - name: score
+                label: Placar (ex. 3 × 1)
+                type: string
+      - name: galleryImages
+        label: Galeria de fotos
+        type: image
+        list: true
+
+  - name: masculino
+    label: Royals Masculino (vermelho)
+    type: file
+    path: content/masculino.json
+    fields:
+      - name: time
+        label: Nome do time
+        type: string
+        readonly: true
+      - name: temporadas
+        label: Temporadas
+        type: number
+      - name: estatisticasManuais
+        label: Números da seção "Sobre" (deixe 0 para calcular pelos resultados)
+        type: object
+        fields:
+          - name: jogos
+            label: Jogos
+            type: number
+          - name: vitorias
+            label: Vitórias
+            type: number
+      - name: players
+        label: Elenco
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Nome
+            type: string
+            required: true
+          - name: number
+            label: Número da camisa
+            type: number
+          - name: position
+            label: Posição
+            type: select
+            options:
+              values: [Levantador, Ponteiro, Oposto, Central, Líbero]
+          - name: height
+            label: Altura (ex. 1,85 m)
+            type: string
+          - name: photo
+            label: Foto
+            type: image
+      - name: mvpHighlights
+        label: MVPs
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Nome
+            type: string
+          - name: number
+            label: Número
+            type: number
+          - name: position
+            label: Posição
+            type: select
+            options:
+              values: [Levantador, Ponteiro, Oposto, Central, Líbero]
+          - name: photo
+            label: Foto
+            type: image
+          - name: match
+            label: Jogo (ex. Royals x Volley Stars)
+            type: string
+          - name: stats
+            label: Números (ex. 32 pontos • 5 aces)
+            type: string
+          - name: quote
+            label: Título / frase (ex. MVP - Torneio Misto 2026.)
+            type: string
+      - name: games
+        label: Jogos
+        type: object
+        fields:
+          - name: proximos
+            label: Próximos jogos (o primeiro aparece no destaque do topo)
+            type: object
+            list: true
+            fields:
+              - name: day
+                label: Dia (ex. 16)
+                type: string
+              - name: month
+                label: Mês (ex. Ago)
+                type: select
+                options:
+                  values: [Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
+              - name: opponent
+                label: Jogo / adversário
+                type: string
+              - name: location
+                label: Local
+                type: string
+              - name: time
+                label: Horário (ex. 19h00)
+                type: string
+              - name: type
+                label: Mando (home = em casa, away = fora)
+                type: select
+                options:
+                  values: [home, away]
+          - name: resultados
+            label: Resultados
+            type: object
+            list: true
+            fields:
+              - name: day
+                label: Dia
+                type: string
+              - name: month
+                label: Mês
+                type: select
+                options:
+                  values: [Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
+              - name: opponent
+                label: Jogo / adversário
+                type: string
+              - name: location
+                label: Local
+                type: string
+              - name: type
+                label: Resultado (win = vitória, loss = derrota)
+                type: select
+                options:
+                  values: [win, loss]
+              - name: score
+                label: Placar (ex. 3 × 1)
+                type: string
+      - name: galleryImages
+        label: Galeria de fotos
+        type: image
+        list: true
