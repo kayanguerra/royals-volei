@@ -1715,3 +1715,84 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
     background: rgba(255,255,255,0.04);
 }
 .games-empty i { font-size: 2.4rem; display: block; margin-bottom: 0.8rem; color: rgba(var(--accent-light-rgb),0.45); }
+
+/* =========================================================
+   AJUSTES DE ROBUSTEZ (textos longos e telas intermediárias)
+   Conteúdo vem do painel, então nomes e locais podem ser
+   longos. Estas regras evitam texto estourando ou sobreposto.
+   ========================================================= */
+
+/* Palavras muito longas quebram em vez de sair da caixa */
+.player-name,
+.mvp-info h3,
+.mvp-match,
+.mvp-stats,
+.mvp-info blockquote,
+.game-info,
+.next-match-card strong,
+.next-match-card small,
+.podium-info h3,
+.podium-meta,
+.podium-highlight strong {
+    overflow-wrap: anywhere;
+}
+
+/* Nome no card do elenco: no máximo 2 linhas */
+.player-name {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Verso do card: valor desce para a linha de baixo se não couber */
+.stat-item { flex-wrap: wrap; row-gap: 0.15rem; }
+.stat-item-value { min-width: 0; text-align: right; overflow-wrap: anywhere; }
+
+/* Card "Próximo desafio": textos limitados para não crescer demais */
+.next-match-card strong,
+.next-match-card small {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+/* Em telas médias o card sai do canto e vai para baixo dos botões,
+   para não cobrir o "Ver Jogos" */
+@media (max-width: 1200px) {
+    .next-match-card {
+        position: static;
+        margin: 1.5rem auto 0;
+        width: calc(100% - 3rem);
+        max-width: 480px;
+    }
+    /* espaço para o menu fixo em cima e sem a seta, que ficaria sobre o card */
+    .hero { padding: 6rem 0 3rem; }
+    .hero-scroll { display: none; }
+}
+
+/* MVP: todos os cards ocupam a mesma célula; a moldura cresce
+   junto com o card mais alto em vez de ter altura fixa */
+.mvp-carousel { min-height: 0 !important; }
+.mvp-stage {
+    display: grid;
+    min-height: 0 !important;
+}
+.mvp-card {
+    position: relative;
+    inset: auto;
+    grid-area: 1 / 1;
+}
+
+/* Menu em telas entre tablet e notebook pequeno (769–1100px) */
+@media (min-width: 769px) and (max-width: 1100px) {
+    .nav-links { gap: 1.1rem; }
+    .nav-links a { font-size: 0.78rem; letter-spacing: 0.05em; }
+    .theme-toggle { margin-left: 0.9rem; }
+    .logo-text { font-size: 1.45rem; }
+}
+@media (min-width: 769px) and (max-width: 960px) {
+    .nav-links { gap: 0.85rem; }
+    .theme-label { display: none; }
+    .theme-toggle { padding: 0.35rem; }
+}

@@ -203,9 +203,19 @@ navLinks.querySelectorAll('a').forEach(link => {
 // Números da seção "Sobre". Atletas vem do elenco e jogos/vitórias dos resultados,
 // a não ser que "estatisticasManuais" no JSON tenha um valor maior que 0.
 function renderAboutStats() {
+    // Escreve o número e ajusta o rótulo (1 Temporada / 2 Temporadas)
+    const LABELS = {
+        statAtletas: ['Atleta', 'Atletas'],
+        statTemporadas: ['Temporada', 'Temporadas'],
+        statJogos: ['Jogo', 'Jogos'],
+        statVitorias: ['Vitória', 'Vitórias'],
+    };
     const set = (id, value) => {
         const el = document.getElementById(id);
-        if (el) el.textContent = value;
+        if (!el) return;
+        el.textContent = value;
+        const label = el.nextElementSibling;
+        if (label && LABELS[id]) label.textContent = LABELS[id][Number(value) === 1 ? 0 : 1];
     };
     const resultados = games.resultados || [];
     const manual = (currentTeam && currentTeam.estatisticasManuais) || {};
