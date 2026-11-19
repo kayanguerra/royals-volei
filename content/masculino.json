@@ -101,19 +101,19 @@
   "games": {
     "proximos": [
       {
-        "day": "10",
-        "month": "Out",
-        "opponent": "Calanguinhos",
-        "location": "Sumaré",
-        "time": "13h",
-        "type": "away"
-      },
-      {
         "day": "29",
         "month": "Nov",
         "opponent": "Liga Pegasus Sumaré ",
         "location": "CIE Bordon, Sumaré - SP",
         "time": "8h00",
+        "type": "away"
+      },
+      {
+        "day": "10",
+        "month": "Out",
+        "opponent": "Calanguinhos",
+        "location": "Sumaré",
+        "time": "13h",
         "type": "away"
       }
     ],
