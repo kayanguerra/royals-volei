@@ -276,3 +276,44 @@ content:
         label: Galeria de fotos
         type: image
         list: true
+
+  - name: podios
+    label: Pódios
+    type: file
+    path: content/podios.json
+    fields:
+      - name: podios
+        label: Torneios com pódio
+        type: object
+        list: true
+        fields:
+          - name: torneio
+            label: Nome do torneio
+            type: string
+            required: true
+          - name: time
+            label: Time
+            type: select
+            options:
+              values: [Misto, Masculino]
+          - name: posicao
+            label: Colocação
+            type: select
+            options:
+              values: [1º lugar, 2º lugar, 3º lugar]
+          - name: data
+            label: Data do torneio
+            type: date
+          - name: local
+            label: Local (ex. Hortolândia, SP)
+            type: string
+          - name: destaque
+            label: Destaque do torneio (nome do atleta)
+            type: string
+          - name: descricao
+            label: Descrição curta (opcional)
+            type: text
+          - name: fotos
+            label: Fotos (a primeira é a principal)
+            type: image
+            list: true

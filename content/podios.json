@@ -1,0 +1,16 @@
+{
+  "podios": [
+    {
+      "torneio": "Nome do Torneio (exemplo — edite no painel)",
+      "time": "Misto",
+      "data": "2026-08-16",
+      "local": "Hortolândia, SP",
+      "posicao": "1º lugar",
+      "destaque": "Nome do destaque",
+      "descricao": "Troque este exemplo pelo torneio real no painel do Pages CMS.",
+      "fotos": [
+        "/assets/gallery/team.jpeg"
+      ]
+    }
+  ]
+}

@@ -615,36 +615,45 @@ function renderGallery() {
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
 let currentIndex = 0;
+// Lista de fotos aberta no momento (galeria da home ou fotos de um pódio).
+let lightboxList = [];
 
-function openLightbox(index) {
+function openLightbox(index, list) {
+    if (!lightbox || !lightboxImg) return;
+    lightboxList = Array.isArray(list) ? list : galleryImages;
+    if (!lightboxList.length) return;
     currentIndex = index;
-    lightboxImg.src = galleryImages[currentIndex];
+    lightboxImg.src = lightboxList[currentIndex];
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
+window.royalsOpenLightbox = openLightbox;
 
 function closeLightbox() {
+    if (!lightbox) return;
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
 }
 
 function navigate(dir) {
-    if (galleryImages.length === 0) return;
-    currentIndex = (currentIndex + dir + galleryImages.length) % galleryImages.length;
-    lightboxImg.src = galleryImages[currentIndex];
+    if (!lightboxList.length) return;
+    currentIndex = (currentIndex + dir + lightboxList.length) % lightboxList.length;
+    lightboxImg.src = lightboxList[currentIndex];
 }
 
-document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
-document.getElementById('lightboxPrev').addEventListener('click', () => navigate(-1));
-document.getElementById('lightboxNext').addEventListener('click', () => navigate(1));
-lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+if (lightbox) {
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    document.getElementById('lightboxPrev').addEventListener('click', () => navigate(-1));
+    document.getElementById('lightboxNext').addEventListener('click', () => navigate(1));
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
 
-document.addEventListener('keydown', e => {
-    if (!lightbox.classList.contains('active')) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') navigate(-1);
-    if (e.key === 'ArrowRight') navigate(1);
-});
+    document.addEventListener('keydown', e => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') navigate(-1);
+        if (e.key === 'ArrowRight') navigate(1);
+    });
+}
 
 // ============================================================
 //  SCROLL ANIMATIONS
@@ -665,7 +674,11 @@ function observeFadeIns() {
 // ============================================================
 
 // Redesenha tudo que muda de um time para o outro.
+// Só a página inicial tem elenco/jogos/galeria (outras páginas, como Pódios, pulam).
+const IS_HOME = !!document.getElementById('playersGrid');
+
 function renderTeam() {
+    if (!IS_HOME) return;
     renderAboutStats();
     renderNextMatchHighlight();
     renderRosterFilters();
@@ -686,7 +699,7 @@ setupRosterFilters();
 setupCardFlipOnTap();
 
 // Carrega os JSON e redesenha com o conteúdo real.
-loadContent().then(() => {
+if (IS_HOME) loadContent().then(() => {
     loadTeam(getTheme());
     renderTeam();
 });
