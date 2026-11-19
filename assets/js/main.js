@@ -82,7 +82,7 @@ loadTeam(document.documentElement.getAttribute('data-theme') === 'vermelho' ? 'v
 //  TEMA — roxo (time misto) / vermelho
 //  Para usar arquivos próprios do tema vermelho, salve:
 //    assets/logo-vermelho.png              (logo + ícone da aba)
-//    assets/gallery/Background-vermelho.png (fundo do hero)
+//    assets/gallery/Background-vermelho.webp (fundo do hero)
 //  Se não existirem, o site usa o logo e o fundo atuais.
 // ============================================================
 
@@ -95,7 +95,7 @@ const THEMES = {
     vermelho: {
         label: 'Masculino',
         logo: 'assets/logo-vermelho.png',
-        heroImage: 'assets/gallery/Background-vermelho.png'
+        heroImage: '/assets/gallery/Background-vermelho.webp'
     }
 };
 const DEFAULT_LOGO = 'assets/logo.png';
