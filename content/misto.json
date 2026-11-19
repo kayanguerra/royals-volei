@@ -7,67 +7,62 @@
   },
   "players": [
     {
-      "number": 4,
       "name": "Bia Martins",
+      "number": 4,
       "position": "Ponteiro",
       "height": "1,70 m",
       "photo": "/assets/gallery/Bia.jpeg"
     },
     {
-      "number": 7,
       "name": "Kayan Guerra",
+      "number": 7,
       "position": "Oposto",
       "height": "1,90 m",
       "photo": "/assets/gallery/kayan1.jpg"
     },
     {
-      "number": 8,
       "name": "Lippe",
+      "number": 8,
       "position": "Oposto",
       "height": "1,85 m",
       "photo": "/assets/gallery/Felipe.jpeg"
     },
     {
-      "number": 3,
       "name": "Maiky",
+      "number": 3,
       "position": "Ponteiro",
       "height": "1,70 m",
       "photo": "/assets/gallery/Maiky.jpeg"
     },
     {
+      "name": "Amanda",
       "number": 6,
-      "name": "Nome da Atleta",
       "position": "Líbero",
-      "height": "1,65 m",
-      "photo": ""
+      "height": "1,65 m"
     },
     {
+      "name": "Nome da Atleta",
       "number": 9,
-      "name": "Nome da Atleta",
       "position": "Levantador",
-      "height": "1,72 m",
-      "photo": ""
+      "height": "1,72 m"
     },
     {
+      "name": "Nome da Atleta",
       "number": 10,
-      "name": "Nome da Atleta",
       "position": "Ponteiro",
-      "height": "1,75 m",
-      "photo": ""
+      "height": "1,75 m"
     },
     {
+      "name": "Nome da Atleta",
       "number": 12,
-      "name": "Nome da Atleta",
       "position": "Central",
-      "height": "1,85 m",
-      "photo": ""
+      "height": "1,85 m"
     },
     {
-      "number": 15,
       "name": "Nome da Atleta",
+      "number": 15,
       "position": "Central",
-      "height": "1,83 m",
-      "photo": ""
+      "height": "1,83 m"
     }
   ],
   "mvpHighlights": [
@@ -106,8 +101,8 @@
         "month": "Ago",
         "opponent": "Torneio Misto Solidário VSC",
         "location": "A definir — Hortolândia, SP",
-        "type": "away",
-        "time": "08h00"
+        "time": "08h00",
+        "type": "away"
       }
     ],
     "resultados": [
