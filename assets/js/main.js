@@ -26,7 +26,7 @@ const CONTENT_FILES = {
 function emptyTeam() {
     return {
         temporadas: 0,
-        estatisticasManuais: { jogos: 0, vitorias: 0 },
+        estatisticasManuais: { atletas: 0, jogos: 0, vitorias: 0 },
         players: [],
         mvpHighlights: [],
         games: { proximos: [], resultados: [] },
@@ -47,7 +47,7 @@ function normalizeTeam(data) {
     t.games.proximos = Array.isArray(t.games.proximos) ? t.games.proximos : [];
     t.games.resultados = Array.isArray(t.games.resultados) ? t.games.resultados : [];
     t.galleryImages = (Array.isArray(t.galleryImages) ? t.galleryImages : []).filter(Boolean);
-    t.estatisticasManuais = Object.assign({ jogos: 0, vitorias: 0 }, t.estatisticasManuais || {});
+    t.estatisticasManuais = Object.assign({ atletas: 0, jogos: 0, vitorias: 0 }, t.estatisticasManuais || {});
     return t;
 }
 
@@ -200,7 +200,7 @@ navLinks.querySelectorAll('a').forEach(link => {
 //  PRÓXIMO JOGO EM DESTAQUE
 // ============================================================
 
-// Números da seção "Sobre". Jogos/vitórias são calculados pelos resultados,
+// Números da seção "Sobre". Atletas vem do elenco e jogos/vitórias dos resultados,
 // a não ser que "estatisticasManuais" no JSON tenha um valor maior que 0.
 function renderAboutStats() {
     const set = (id, value) => {
@@ -211,7 +211,8 @@ function renderAboutStats() {
     const manual = (currentTeam && currentTeam.estatisticasManuais) || {};
     const jogos = Number(manual.jogos) > 0 ? manual.jogos : resultados.length;
     const vitorias = Number(manual.vitorias) > 0 ? manual.vitorias : resultados.filter(g => g.type === 'win').length;
-    set('statAtletas', players.length);
+    const atletas = Number(manual.atletas) > 0 ? manual.atletas : players.length;
+    set('statAtletas', atletas);
     set('statTemporadas', (currentTeam && currentTeam.temporadas) || 0);
     set('statJogos', jogos);
     set('statVitorias', vitorias);

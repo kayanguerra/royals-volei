@@ -18,9 +18,12 @@ content:
         label: Temporadas
         type: number
       - name: estatisticasManuais
-        label: Números da seção "Sobre" (deixe 0 para calcular pelos resultados)
+        label: Números da seção "Sobre" (deixe 0 para calcular automático pelo elenco e resultados)
         type: object
         fields:
+          - name: atletas
+            label: Atletas
+            type: number
           - name: jogos
             label: Jogos
             type: number
@@ -154,9 +157,12 @@ content:
         label: Temporadas
         type: number
       - name: estatisticasManuais
-        label: Números da seção "Sobre" (deixe 0 para calcular pelos resultados)
+        label: Números da seção "Sobre" (deixe 0 para calcular automático pelo elenco e resultados)
         type: object
         fields:
+          - name: atletas
+            label: Atletas
+            type: number
           - name: jogos
             label: Jogos
             type: number
