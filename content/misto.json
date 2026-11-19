@@ -133,8 +133,8 @@
     ]
   },
   "galleryImages": [
-    "/assets/gallery/team.jpeg",
     "/assets/gallery/v2_ddc82299-f66d-45a0-aa35-c1d1be418c7d.jpg",
-    "/assets/gallery/v2_c6adb6b1-72a0-4a63-9e01-d49779ae0ab0.jpg"
+    "/assets/gallery/v2_c6adb6b1-72a0-4a63-9e01-d49779ae0ab0.jpg",
+    "/assets/gallery/team.jpeg"
   ]
 }
