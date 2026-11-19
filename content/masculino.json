@@ -1,47 +1,123 @@
 {
   "time": "Royals Masculino",
-  "temporadas": 0,
+  "temporadas": 1,
   "estatisticasManuais": {
-    "atletas": 0,
-    "jogos": 0,
-    "vitorias": 0
+    "atletas": 14,
+    "jogos": 3,
+    "vitorias": 1
   },
   "players": [
+    {
+      "name": "Guiih Glass",
+      "number": 1,
+      "position": "Levantador",
+      "height": "A definir"
+    },
+    {
+      "name": "Gustavo Lopes",
+      "number": 2,
+      "position": "Ponteiro",
+      "height": "A definir"
+    },
+    {
+      "name": "Paulo Castro",
+      "number": 3,
+      "position": "Líbero",
+      "height": "A definir"
+    },
+    {
+      "name": "Gabriel",
+      "number": 5,
+      "position": "Ponteiro",
+      "height": "A definir"
+    },
+    {
+      "name": "Calixto",
+      "number": 6,
+      "position": "Central",
+      "height": "A definir"
+    },
     {
       "name": "Kayan",
       "number": 7,
       "position": "Oposto",
-      "height": "1,90 m"
-    },
-    {
-      "name": "Nome do Atleta",
-      "number": 2,
-      "position": "Ponteiro"
-    },
-    {
-      "name": "Nome do Atleta",
-      "number": 5,
-      "position": "Ponteiro"
-    },
-    {
-      "name": "Nome do Atleta",
-      "number": 11,
-      "position": "Oposto"
-    },
-    {
-      "name": "Nome do Atleta",
-      "number": 13,
-      "position": "Central"
-    },
-    {
-      "name": "Nome do Atleta",
-      "number": 14,
-      "position": "Central"
+      "height": "1.90",
+      "photo": "/assets/gallery/v2_4aad291b-df45-4ed7-9be6-97f296758bc6.jpg"
     },
     {
       "name": "Nome do Atleta",
       "number": 17,
       "position": "Líbero"
+    },
+    {
+      "name": "Maiky",
+      "number": 8,
+      "position": "Ponteiro",
+      "height": "A definir"
+    },
+    {
+      "name": "Salles",
+      "number": 10,
+      "position": "Líbero",
+      "height": "A definir"
+    },
+    {
+      "name": "Mairo",
+      "number": 11,
+      "position": "Ponteiro",
+      "height": "A definir"
+    },
+    {
+      "name": "Lyncon",
+      "number": 12,
+      "position": "Líbero",
+      "height": "A definir"
+    },
+    {
+      "name": "Miguel",
+      "number": 18,
+      "position": "Central",
+      "height": "A definir"
+    },
+    {
+      "name": "Herberta",
+      "number": 22,
+      "position": "Levantador",
+      "height": "A definir"
+    },
+    {
+      "name": "Lippe",
+      "number": 23,
+      "position": "Oposto",
+      "height": "A definir"
+    },
+    {
+      "name": "Samuel Márcio",
+      "number": 31,
+      "position": "Ponteiro",
+      "height": "A definir"
     }
-  ]
+  ],
+  "games": {
+    "proximos": [
+      {
+        "day": "10",
+        "month": "Out",
+        "opponent": "Calanguinhos",
+        "location": "Sumaré",
+        "time": "13h",
+        "type": "away"
+      }
+    ],
+    "resultados": [
+      {
+        "day": "10",
+        "month": "Out",
+        "opponent": "Royals x Calanguinhos",
+        "location": "Sumaré",
+        "type": "win",
+        "score": "3x0"
+      }
+    ]
+  }
 }
