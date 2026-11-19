@@ -1,15 +1,17 @@
 {
   "podios": [
     {
-      "torneio": "Nome do Torneio (exemplo — edite no painel)",
+      "torneio": "Torneio Solidário Misto - Edição Agosto 2026",
       "time": "Misto",
+      "posicao": "3º lugar",
       "data": "2026-08-16",
       "local": "Hortolândia, SP",
-      "posicao": "1º lugar",
-      "destaque": "Nome do destaque",
+      "destaque": "Giovanna e Maiky",
       "descricao": "Troque este exemplo pelo torneio real no painel do Pages CMS.",
       "fotos": [
-        "/assets/gallery/team.jpeg"
+        "/assets/gallery/v2_1b1dc0ea-51c2-4a7e-a8bc-184077cb7993.jpg",
+        "/assets/gallery/v2_f2dc9907-746b-4c16-821c-b02f6f075c65.jpg",
+        "/assets/gallery/v2_adbcdf84-13a7-4e12-8392-2398f799c1c9.jpg"
       ]
     }
   ]
