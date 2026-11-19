@@ -65,31 +65,20 @@
   ],
   "mvpHighlights": [
     {
-      "name": "Kayan",
-      "number": 7,
-      "position": "Oposto",
-      "photo": "/assets/gallery/kayan1.jpg",
-      "match": "Royals x Volley Stars",
-      "stats": "32 pontos • 5 aces • 8 bloqueios",
+      "name": "Maiky",
+      "number": 3,
+      "position": "Ponteiro",
+      "match": "Torneio Misto Solidário VSC",
+      "stats": "Destaque Masculino Royals",
       "quote": "MVP - Torneio Misto 2026."
     },
     {
-      "name": "Bia Martins",
-      "number": 4,
-      "position": "Ponteiro",
-      "photo": "/assets/gallery/Bia.jpeg",
-      "match": "Royals x Volley Stars",
-      "stats": "18 pontos • 4 aces • 3 bloqueios",
-      "quote": "MVP - Torneio Misto 2025."
-    },
-    {
-      "name": "Lippe",
-      "number": 8,
-      "position": "Oposto",
-      "photo": "/assets/gallery/Felipe.jpeg",
-      "match": "Royals x Set Masters",
-      "stats": "21 recepções • 87% positivas",
-      "quote": "MVP - Torneio Misto 2024."
+      "name": "Giovanna",
+      "number": 9,
+      "position": "Central",
+      "match": "Torneio Misto Solidário VSC",
+      "stats": "Destaque Feminino Royals",
+      "quote": "MVP - Torneio Misto 2026."
     }
   ],
   "games": {
