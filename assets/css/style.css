@@ -1837,3 +1837,47 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
     .theme-label { display: none; }
     .theme-toggle { padding: 0.35rem; }
 }
+
+/* =========================================================
+   MENU: seções da página inicial | divisor | páginas separadas
+   ========================================================= */
+.nav-divider {
+    width: 1px;
+    height: 22px;
+    background: rgba(255,255,255,0.18);
+    list-style: none;
+}
+.nav-divider span { display: none; } /* rótulo só aparece no celular */
+.nav-page i { font-size: 0.85em; margin-right: 0.25rem; color: var(--accent); }
+.nav-page.active i { color: var(--accent-light); }
+.nav-long { display: none; }
+
+@media (max-width: 768px) {
+    .nav-divider {
+        width: 70%;
+        height: auto;
+        background: none;
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        margin: 0.4rem 0 -0.4rem;
+    }
+    .nav-divider::before,
+    .nav-divider::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: rgba(255,255,255,0.15);
+    }
+    .nav-divider span {
+        display: inline;
+        font-size: 0.66rem;
+        font-weight: 800;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--muted);
+        white-space: nowrap;
+    }
+    .nav-short { display: none; }
+    .nav-long { display: inline; }
+}
