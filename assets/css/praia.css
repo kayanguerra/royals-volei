@@ -1,0 +1,157 @@
+/* ===== VÔLEI DE PRAIA — complementa style.css e podios.css ===== */
+
+:root {
+    /* cores fixas das categorias (não mudam com o tema) */
+    --cat-misto: #A78BFA;
+    --cat-misto-rgb: 167,139,250;
+    --cat-masc: #F87171;
+    --cat-masc-rgb: 248,113,113;
+}
+
+/* ---------- Filtro (fica preso logo abaixo do menu ao rolar) ---------- */
+.beach-filter-bar {
+    position: sticky;
+    top: 65px; /* altura do menu depois de rolar */
+    z-index: 20;
+    padding: 0.8rem 0;
+    background: linear-gradient(to bottom, rgba(var(--deep-rgb),0.92), rgba(var(--deep-rgb),0.75));
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(var(--accent-rgb),0.12);
+}
+.beach-filters { justify-content: center; margin: 0; }
+.filter-count { opacity: 0.7; font-weight: 600; }
+
+/* ---------- Grade de duplas ---------- */
+.beach-pairs-section { padding-top: 3.5rem; }
+.pairs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.4rem;
+}
+
+.pair-card {
+    --c: var(--cat-misto);
+    --c-rgb: var(--cat-misto-rgb);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.9rem;
+    padding: 3.4rem 1.4rem 1.6rem; /* espaço para o selo de categoria */
+    border-radius: calc(var(--radius) + 10px);
+    background: linear-gradient(160deg, rgba(var(--c-rgb),0.14), rgba(0,0,0,0.5) 55%);
+    border: 1px solid rgba(var(--c-rgb),0.35);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    color: var(--light);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+.pair-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 26px 60px rgba(0,0,0,0.45), 0 0 30px rgba(var(--c-rgb),0.18);
+}
+.pair-masculino { --c: var(--cat-masc); --c-rgb: var(--cat-masc-rgb); }
+
+.pair-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(var(--c-rgb),0.16);
+    border: 1px solid rgba(var(--c-rgb),0.5);
+    color: var(--c);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.pair-athletes {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: start;
+    gap: 0.4rem;
+    width: 100%;
+}
+.pair-athlete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    min-width: 0;
+}
+.pair-photo {
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.06);
+    border: 2px solid rgba(var(--c-rgb),0.6);
+    box-shadow: 0 0 0 5px rgba(var(--c-rgb),0.08);
+    margin-bottom: 0.3rem;
+}
+.pair-photo img { width: 100%; height: 100%; object-fit: cover; }
+.pair-photo i { font-size: 2.6rem; color: rgba(255,255,255,0.35); }
+.pair-athlete strong {
+    font-size: 0.98rem;
+    font-weight: 700;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+.pair-athlete span {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--c);
+}
+.pair-amp {
+    align-self: center;
+    margin-top: -2rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-style: italic;
+    color: var(--accent);
+}
+.pair-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: 1.7rem;
+    letter-spacing: 0.04em;
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+    padding-top: 0.9rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    width: 100%;
+}
+.pair-card p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+/* ---------- Pódios da praia: medalha + categoria lado a lado ---------- */
+.podium-tags { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+.podium-tags .podium-medal { align-self: auto; }
+.pair-badge-inline {
+    position: static;
+    --c: var(--cat-misto);
+    --c-rgb: var(--cat-misto-rgb);
+}
+.pair-badge-inline.pair-badge-masculino { --c: var(--cat-masc); --c-rgb: var(--cat-masc-rgb); }
+
+#podios-praia { padding-bottom: 1rem; }
+
+@media (max-width: 420px) {
+    .pair-photo { width: 84px; height: 84px; }
+    .pair-card { padding: 3.2rem 1rem 1.4rem; }
+}
+
+/* Ao pular para uma seção (link #duplas, #podios-praia), o título
+   para abaixo do menu + barra de filtro, em vez de ficar escondido */
+#duplas, #podios-praia { scroll-margin-top: 140px; }

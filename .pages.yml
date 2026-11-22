@@ -323,3 +323,90 @@ content:
             label: Fotos (a primeira é a principal)
             type: image
             list: true
+
+  - name: praia
+    label: Vôlei de Praia
+    type: file
+    path: content/praia.json
+    fields:
+      - name: duplas
+        label: Duplas
+        type: object
+        list: true
+        fields:
+          - name: nome
+            label: Nome da dupla (opcional — se vazio, mostra os dois nomes)
+            type: string
+          - name: categoria
+            label: Categoria
+            type: select
+            options:
+              values: [Misto, Masculino]
+          - name: atleta1
+            label: Atleta 1
+            type: object
+            fields:
+              - name: nome
+                label: Nome
+                type: string
+              - name: foto
+                label: Foto
+                type: image
+              - name: funcao
+                label: Função
+                type: select
+                options:
+                  values: [Bloqueador, Defensor]
+          - name: atleta2
+            label: Atleta 2
+            type: object
+            fields:
+              - name: nome
+                label: Nome
+                type: string
+              - name: foto
+                label: Foto
+                type: image
+              - name: funcao
+                label: Função
+                type: select
+                options:
+                  values: [Bloqueador, Defensor]
+          - name: descricao
+            label: Descrição curta (opcional)
+            type: text
+      - name: podios
+        label: Pódios na praia
+        type: object
+        list: true
+        fields:
+          - name: torneio
+            label: Nome do torneio
+            type: string
+            required: true
+          - name: categoria
+            label: Categoria
+            type: select
+            options:
+              values: [Misto, Masculino]
+          - name: dupla
+            label: Dupla (ex. Ana e Bruno)
+            type: string
+          - name: posicao
+            label: Colocação
+            type: select
+            options:
+              values: [1º lugar, 2º lugar, 3º lugar]
+          - name: data
+            label: Data do torneio
+            type: date
+          - name: local
+            label: Local (ex. Praia Grande, SP)
+            type: string
+          - name: descricao
+            label: Descrição curta (opcional)
+            type: text
+          - name: fotos
+            label: Fotos (a primeira é a principal)
+            type: image
+            list: true

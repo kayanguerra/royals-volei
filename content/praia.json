@@ -1,0 +1,30 @@
+{
+  "duplas": [
+    {
+      "nome": "Dupla exemplo (edite no painel)",
+      "categoria": "Misto",
+      "atleta1": { "nome": "Atleta 1", "foto": "", "funcao": "Bloqueador" },
+      "atleta2": { "nome": "Atleta 2", "foto": "", "funcao": "Defensor" },
+      "descricao": "Troque este exemplo pela dupla real no painel."
+    },
+    {
+      "nome": "",
+      "categoria": "Masculino",
+      "atleta1": { "nome": "Atleta 3", "foto": "", "funcao": "Bloqueador" },
+      "atleta2": { "nome": "Atleta 4", "foto": "", "funcao": "Defensor" },
+      "descricao": ""
+    }
+  ],
+  "podios": [
+    {
+      "torneio": "Torneio de Praia (exemplo — edite no painel)",
+      "categoria": "Misto",
+      "dupla": "Atleta 1 e Atleta 2",
+      "posicao": "1º lugar",
+      "data": "2026-10-12",
+      "local": "Praia Grande, SP",
+      "descricao": "",
+      "fotos": []
+    }
+  ]
+}
