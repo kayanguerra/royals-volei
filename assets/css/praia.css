@@ -197,3 +197,22 @@
     text-transform: uppercase;
     color: var(--muted);
 }
+
+/* Fundo de praia só nesta página (um por tema, mesmo enquadramento).
+   Um pouco mais visível que nas outras páginas: o centro da imagem é escuro. */
+.beach-hero { min-height: 68vh; }
+.beach-hero::after {
+    background-image: url('../gallery/Background-praia.webp');
+    background-position: center 72%; /* mostra a areia e a rede */
+    filter: none;
+    opacity: 0.4;
+    -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent);
+    mask-image: linear-gradient(to bottom, #000 80%, transparent);
+}
+[data-theme="vermelho"] .beach-hero::after {
+    background-image: url('../gallery/Background-praia-vermelho.webp');
+}
+@media (max-width: 600px) {
+    /* tela estreita: puxa para a direita para a rede aparecer */
+    .beach-hero::after { background-position: 82% 75%; }
+}
