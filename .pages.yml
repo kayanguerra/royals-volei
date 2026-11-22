@@ -390,7 +390,7 @@ content:
             options:
               values: [Misto, Masculino]
           - name: dupla
-            label: Dupla (ex. Ana e Bruno)
+            label: Dupla — nome da dupla ou os dois nomes (ex. Ana e Bruno), escrito igual ao card
             type: string
           - name: posicao
             label: Colocação

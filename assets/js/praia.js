@@ -23,6 +23,45 @@
     const categoriaDe = item => (item.categoria === 'Masculino' ? 'Masculino' : 'Misto');
     const passa = item => filtro === 'Todas' || categoriaDe(item) === filtro;
 
+    // ---------- Ligação pódio -> dupla ----------
+    // O campo "dupla" do pódio é texto livre. Ele conta para o card se for:
+    //  - igual ao nome da dupla, ou
+    //  - os dois nomes dos atletas, em qualquer ordem, separados por
+    //    "e", "&", "+", "/" ou vírgula ("Ana e Bruno" = "bruno & ana").
+    // Maiúsculas, acentos e espaços extras são ignorados.
+    const norm = str => String(str || '')
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase().replace(/\s+/g, ' ').trim();
+    const chaveNomes = str => norm(str)
+        .split(/\s*(?:&|\+|,|\/|\be\b)\s*/)
+        .filter(Boolean).sort().join('|');
+
+    function podiosDaDupla(d) {
+        const nomeDupla = norm(d.nome);
+        const chaveAtletas = [d.atleta1?.nome, d.atleta2?.nome].map(norm).filter(Boolean).sort().join('|');
+        return podios.filter(p => {
+            if (!p.dupla) return false;
+            if (nomeDupla && norm(p.dupla) === nomeDupla) return true;
+            return chaveAtletas.includes('|') && chaveNomes(p.dupla) === chaveAtletas;
+        });
+    }
+
+    function medalhasHtml(d) {
+        const lista = podiosDaDupla(d);
+        if (!lista.length) return '';
+        const conta = n => lista.filter(p => numeroPosicao(p.posicao) === n).length;
+        const chips = [1, 2, 3]
+            .filter(n => conta(n) > 0)
+            .map(n => `<span class="pair-medal pair-medal-${MEDALHAS[n].classe}" title="${conta(n)}× ${n}º lugar"><i class="fa-solid ${MEDALHAS[n].icone}"></i> ${conta(n)}</span>`)
+            .join('');
+        const total = lista.length;
+        return `
+            <a class="pair-medals" href="#podios-praia" aria-label="${total} ${total === 1 ? 'pódio' : 'pódios'} — ver pódios">
+                ${chips}
+                <span class="pair-medals-total">${total} ${total === 1 ? 'pódio' : 'pódios'}</span>
+            </a>`;
+    }
+
     function formatarData(iso) {
         const m = String(iso || '').match(/^(\d{4})-(\d{2})(?:-(\d{2}))?/);
         if (!m) return iso || '';
@@ -78,6 +117,7 @@
                 </div>
                 <h3>${esc(titulo)}</h3>
                 ${d.descricao ? `<p>${esc(d.descricao)}</p>` : ''}
+                ${medalhasHtml(d)}
             </article>`;
     }
 
@@ -168,6 +208,18 @@
         renderPodios();
         if (typeof observeFadeIns === 'function') observeFadeIns();
         else document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+    }
+
+    // Barra de filtro: ganha fundo de vidro só quando gruda embaixo do menu
+    const barra = document.querySelector('.beach-filter-bar');
+    if (barra) {
+        const checaPresa = () => {
+            const topo = parseFloat(getComputedStyle(barra).top) || 0;
+            barra.classList.toggle('is-stuck', barra.getBoundingClientRect().top <= topo + 0.5);
+        };
+        window.addEventListener('scroll', checaPresa, { passive: true });
+        window.addEventListener('resize', checaPresa);
+        checaPresa();
     }
 
     fetch('content/praia.json', { cache: 'no-cache' })

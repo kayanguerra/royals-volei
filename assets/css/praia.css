@@ -9,17 +9,32 @@
 }
 
 /* ---------- Filtro (fica preso logo abaixo do menu ao rolar) ---------- */
+/* A faixa em si é transparente (sem tarja escura no meio da página).
+   Quando gruda embaixo do menu, só a "cápsula" dos botões ganha fundo. */
 .beach-filter-bar {
     position: sticky;
     top: 65px; /* altura do menu depois de rolar */
     z-index: 20;
-    padding: 0.8rem 0;
-    background: linear-gradient(to bottom, rgba(var(--deep-rgb),0.92), rgba(var(--deep-rgb),0.75));
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(var(--accent-rgb),0.12);
+    padding: 0.7rem 0;
+    pointer-events: none; /* a área vazia não bloqueia cliques no conteúdo */
 }
-.beach-filters { justify-content: center; margin: 0; }
+.beach-filters {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0.35rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    pointer-events: auto;
+    transition: background var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+.beach-filter-bar.is-stuck .beach-filters {
+    background: rgba(var(--deep-rgb),0.72);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-color: rgba(var(--accent-rgb),0.22);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
 .filter-count { opacity: 0.7; font-weight: 600; }
 
 /* ---------- Grade de duplas ---------- */
@@ -155,3 +170,30 @@
 /* Ao pular para uma seção (link #duplas, #podios-praia), o título
    para abaixo do menu + barra de filtro, em vez de ficar escondido */
 #duplas, #podios-praia { scroll-margin-top: 140px; }
+
+/* Medalhas da dupla (somadas dos pódios em que ela aparece) */
+.pair-medals {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    margin-top: 0.2rem;
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: border-color var(--transition), background var(--transition);
+}
+.pair-medals:hover { border-color: rgba(var(--accent-rgb),0.45); background: rgba(var(--accent-rgb),0.08); }
+.pair-medal { display: inline-flex; align-items: center; gap: 0.3rem; font-weight: 800; font-size: 0.85rem; }
+.pair-medal-gold   { color: var(--gold); }
+.pair-medal-silver { color: var(--silver); }
+.pair-medal-bronze { color: var(--bronze); }
+.pair-medals-total {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
